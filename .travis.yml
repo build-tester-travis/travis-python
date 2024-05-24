@@ -20,18 +20,18 @@ jobs:
           run_phase: after_success
           output_format: cyclonedx-json
           input_dir: /
-          output_dir: /sbom-output
+          output_dir: /home/travis/build/build-tester-travis/travis-python/sbom-output
 
 after_success:
   - echo "Build successful! Checking SBOM..."
-  - ls -al /sbom-output
-  - cat /sbom-output/*
+  - ls -al /home/travis/build/build-tester-travis/travis-python/sbom-output
+  - cat /home/travis/build/build-tester-travis/travis-python/sbom-output/*
 
 deploy:
   provider: releases
   edge: true
   file_glob: true
-  file: /sbom-output/*
+  file: /home/travis/build/build-ttester-travis/travis-python/sbom-output/*
   skip_cleanup: true
   on:
     branch: main
