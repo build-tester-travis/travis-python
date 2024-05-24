@@ -24,14 +24,14 @@ jobs:
 
 after_success:
   - echo "Build successful! Checking SBOM..."
-  - ls -al /home/travis/build/build-tester-travis/travis-python/sbom-output
-  - cat /home/travis/build/build-tester-travis/travis-python/sbom-output/*
+  - ls -al /home/travis/build/build-tester-travis/travis-python/
+  - cat /home/travis/build/build-tester-travis/travis-python/*
 
 deploy:
   provider: releases
   edge: true
   file_glob: true
-  file: /home/travis/build/build-ttester-travis/travis-python/sbom-output/*
+  file: /home/travis/build/build-ttester-travis/travis-python/*
   skip_cleanup: true
   on:
     branch: main
