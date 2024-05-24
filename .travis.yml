@@ -35,3 +35,6 @@ deploy:
   skip_cleanup: true
   on:
     branch: main
+
+rvm:
+  - 2.7.2
